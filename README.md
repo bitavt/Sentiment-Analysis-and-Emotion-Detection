@@ -15,26 +15,23 @@ This class encapsulates:
 - **Training Pipeline using `Trainer` API**
 - **Model Evaluation and Performance Metrics Computation**
 
-### 3. **Tokenization Function**
-The  function prepares text input for the DistilBERT model by tokenizing and padding them to the maximum sequence length.
-
-### 4. **Prepare Training, Validation, and Test Data**
+### 3. **Prepare Training, Validation, and Test Data**
 The dataset is split as follows:
 - **60% for Training**
 - **20% for Validation**
 - **20% for Testing**
 
-Each split is transformed into a list of strings and then tokenized separately with `tokenize_texts()`, and finally datasets are wrapped into `SentimentDataset` objects.
+Each split is transformed into a list of strings and then tokenized separately with `tokenize_texts()`. Finally datasets are wrapped into `SentimentDataset` objects.
 
-### 5. **Train the Model**
+### 4. **Train the Model**
 - The training process is handled by Hugging Face's `Trainer` class.
 - Training hyperparameters such as learning rate, batch size, and number of epochs are configurable.
 - The best model is saved based on evaluation performance.
 
-### 6. **Evaluate the Model**
+### 5. **Evaluate the Model**
 After training, `trainer.evaluate()` is used to assess performance on the validation set.
 
-### 7. **Compute Performance Metrics**
+### 6. **Compute Performance Metrics**
 Metrics include:
 - **Accuracy**
 - **Precision**
